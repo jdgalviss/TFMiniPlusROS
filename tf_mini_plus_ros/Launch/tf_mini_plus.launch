@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="tf_mini_plus_ros" name="tf_mini_plus" type="range_sensor_node" respawn="false" output="screen"  >
+      <param name="tfmp_base_address" type="int" value="17" /> <!-- 16(dec) = 0x10(hex) -->
+      <param name="tfmp_bus" type="int" value="0" />
+      <param name="tfmp_num_devices" type="int" value="4" />
+
+      <remap from="/range_sensor/sensor1" to="/kiwibot/cliff_sensor1"/>
+      <remap from="/range_sensor/sensor2" to="/kiwibot/distance_sensor1"/>
+      <remap from="/range_sensor/sensor3" to="/kiwibot/distance_sensor2"/>
+      <remap from="/range_sensor/sensor4" to="/kiwibot/cliff_sensor2"/>
+
+    </node> 
+</launch>
